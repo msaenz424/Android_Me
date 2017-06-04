@@ -41,23 +41,27 @@ public class AndroidMeActivity extends AppCompatActivity {
         setContentView(R.layout.activity_android_me);
 
         // TODO (5) Create a new BodyPartFragment instance and display it using the FragmentManager
-        BodyPartFragment headPartFragment = new BodyPartFragment();
-        headPartFragment.setImageIds(AndroidImageAssets.getHeads());
-        headPartFragment.setListIndex(2);   // 2 is just an arbitrary number, any number may be used
 
-        BodyPartFragment bodyPartFragment = new BodyPartFragment();
-        bodyPartFragment.setImageIds(AndroidImageAssets.getBodies());
-        bodyPartFragment.setListIndex(3);
+        // creates a new fragment only where there is no previously saved state
+        if (savedInstanceState == null) {
+            BodyPartFragment headPartFragment = new BodyPartFragment();
+            headPartFragment.setImageIds(AndroidImageAssets.getHeads());
+            //headPartFragment.setListIndex(//);   // 2 is just an arbitrary number, any number may be used
 
-        BodyPartFragment legPartFragment = new BodyPartFragment();
-        legPartFragment.setImageIds(AndroidImageAssets.getLegs());
-        legPartFragment.setListIndex(1);
+            BodyPartFragment bodyPartFragment = new BodyPartFragment();
+            bodyPartFragment.setImageIds(AndroidImageAssets.getBodies());
+            //bodyPartFragment.setListIndex(3);
 
-        FragmentManager fragmentManager = getSupportFragmentManager();
-        fragmentManager.beginTransaction()
-                .add(R.id.head_container, headPartFragment)
-                .add(R.id.body_container, bodyPartFragment)
-                .add(R.id.leg_container, legPartFragment)
-                .commit();
+            BodyPartFragment legPartFragment = new BodyPartFragment();
+            legPartFragment.setImageIds(AndroidImageAssets.getLegs());
+            //legPartFragment.setListIndex(1);
+
+            FragmentManager fragmentManager = getSupportFragmentManager();
+            fragmentManager.beginTransaction()
+                    .add(R.id.head_container, headPartFragment)
+                    .add(R.id.body_container, bodyPartFragment)
+                    .add(R.id.leg_container, legPartFragment)
+                    .commit();
+        }
     }
 }
