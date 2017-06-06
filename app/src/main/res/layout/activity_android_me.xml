@@ -33,7 +33,7 @@
         <FrameLayout
             android:id="@+id/head_container"
             android:layout_width="match_parent"
-            android:layout_height="180dp"/>
+            android:layout_height="180dp" />
 
         <FrameLayout
             android:id="@+id/body_container"

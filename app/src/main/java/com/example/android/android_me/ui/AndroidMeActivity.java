@@ -22,7 +22,6 @@ import android.os.Bundle;
 
 import com.example.android.android_me.R;
 import com.example.android.android_me.data.AndroidImageAssets;
-import com.example.android.android_me.data.BodyPartFragment;
 
 // This activity will display a custom Android image composed of three body parts: head, body, and legs
 public class AndroidMeActivity extends AppCompatActivity {
